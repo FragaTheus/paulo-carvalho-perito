@@ -1,7 +1,7 @@
 import SectionLayout from "@/components/layout/section-layout";
 import Button from "@/components/ui/button";
 import Input from "@/components/ui/input";
-import { BsMailbox, BsWhatsapp } from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 
 const CtaContent = () => {
@@ -34,8 +34,8 @@ const CtaForm = () => {
     <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <Input type="text" placeholder="Nome completo" />
       <Input type="email" placeholder="Email corporativo" />
-      <Input type="text" placeholder="Assunto" className="col-span-2" />
-      <Input type="text" placeholder="Mensagem" className="col-span-2" />
+      <Input type="text" placeholder="Assunto" className="md:col-span-2" />
+      <Input type="text" placeholder="Mensagem" className="md:col-span-2" />
       <Button className="bg-primary text-primary-foreground hover:opacity-90 active:bg-primary active:text-primary-foreground active:opacity-80">
         Enviar
       </Button>
