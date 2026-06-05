@@ -27,24 +27,12 @@ Consolidar a presença digital de Paulo Carvalho como referência em perícia tr
 
 ---
 
-## Estrutura do Repositório
-
-```
-paulo-carvalho/
-├── README.md              ← este arquivo
-├── RELEASES.md            ← histórico de versões e roadmap
-└── paulocarvalho/         ← código-fonte da aplicação
-    └── README.md          ← documentação técnica do projeto
-```
-
----
-
 ## Links
 
-| Documento                                              | Descrição                                          |
-| ------------------------------------------------------ | -------------------------------------------------- |
-| [`paulocarvalho/README.md`](./paulocarvalho/README.md) | Documentação técnica: estrutura, libs e como rodar |
-| [`RELEASES.md`](./RELEASES.md)                         | Histórico de versões e próximas entregas           |
+| Documento                                                                       | Descrição                                          |
+| ------------------------------------------------------------------------------- | -------------------------------------------------- |
+| [`paulocarvalho/README.md`](./paulocarvalho/README.md)                          | Documentação técnica: estrutura, libs e como rodar |
+| [GitHub Releases](https://github.com/FragaTheus/paulo-carvalho-perito/releases) | Histórico de versões e próximas entregas           |
 
 ---
 
