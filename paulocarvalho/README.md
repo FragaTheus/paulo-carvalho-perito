@@ -84,52 +84,32 @@ O template EmailJS deve conter as variáveis:
 
 ## Como Rodar
 
-### Pré-requisitos
+### 1. Instalar o pnpm
 
-- Node.js 20+
-- pnpm (`npm install -g pnpm`)
+**Windows**
 
-### Instalação
-
-```bash
-pnpm install
+```powershell
+iwr https://get.pnpm.io/install.ps1 -useb | iex
 ```
 
-### Desenvolvimento
+**macOS**
 
 ```bash
-pnpm dev
+brew install pnpm
+```
+
+**Linux**
+
+```bash
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
+---
+
+### 2. Instalar dependências e rodar
+
+```bash
+pnpm install && pnpm run dev
 ```
 
 Acesse [http://localhost:3000](http://localhost:3000).
-
-### Build de produção
-
-```bash
-pnpm build
-pnpm start
-```
-
-### Lint
-
-```bash
-pnpm lint
-```
-
----
-
-## Fontes
-
-Carregadas via `next/font/google`:
-
-- **Inter** — corpo de texto
-- **Hanken Grotesk** — títulos e headings
-- **JetBrains Mono** — elementos mono/código
-
----
-
-## Deploy
-
-O projeto é compatível com deploy estático. Recomendado: **[Vercel](https://vercel.com/)** — suporte nativo ao Next.js, CI/CD automático via Git.
-
-Lembre-se de configurar as variáveis de ambiente `NEXT_PUBLIC_EMAILJS_*` no painel do projeto na Vercel.
