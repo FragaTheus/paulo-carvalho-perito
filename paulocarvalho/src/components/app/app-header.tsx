@@ -1,4 +1,4 @@
-import AppCta from "../app-cta";
+import AppCta from "./app-cta";
 import AppLogo from "./app-logo";
 
 export default function AppHeader() {
