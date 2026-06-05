@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# paulocarvalho — Documentação Técnica
 
-## Getting Started
+Documentação técnica da aplicação. Para contexto geral do projeto e cliente, consulte o [`README.md` na raiz](../README.md).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+| Tecnologia                                                                                           | Versão | Uso                                           |
+| ---------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------- |
+| [Next.js](https://nextjs.org/)                                                                       | 16.2.7 | Framework principal (App Router + SSG)        |
+| [React](https://react.dev/)                                                                          | 19.2.4 | UI                                            |
+| [TypeScript](https://www.typescriptlang.org/)                                                        | 5.x    | Tipagem estática                              |
+| [Tailwind CSS](https://tailwindcss.com/)                                                             | 4.x    | Estilização utilitária                        |
+| [@emailjs/browser](https://www.emailjs.com/)                                                         | 4.4.1  | Envio de e-mail pelo formulário (client-side) |
+| [react-icons](https://react-icons.github.io/react-icons/)                                            | 5.x    | Ícones (WhatsApp, e-mail, etc.)               |
+| [clsx](https://github.com/lukeed/clsx) + [tailwind-merge](https://github.com/dcastil/tailwind-merge) | —      | Utilitário `cn()` para classes condicionais   |
+
+**Gerenciador de pacotes:** `pnpm`  
+**Build:** Turbopack (via `next build`)
+
+---
+
+## Estrutura de Pastas
+
+```
+src/
+├── app/                    # Entrypoint Next.js App Router
+│   ├── layout.tsx          # Layout raiz (fontes, header)
+│   ├── page.tsx            # Home — composição das seções
+│   └── globals.css         # Estilos globais + tokens Tailwind
+│
+├── components/
+│   ├── app/                # Componentes globais reutilizáveis
+│   │   ├── app-header.tsx  # Cabeçalho do site
+│   │   ├── app-logo.tsx    # Logo
+│   │   ├── app-cta.tsx     # CTA global
+│   │   └── app-form.tsx    # Formulário de contato (EmailJS)
+│   ├── layout/
+│   │   └── section-layout.tsx  # Wrapper de seção com padding/id
+│   └── ui/
+│       ├── button.tsx      # Componente Button base
+│       └── input.tsx       # Componente Input base
+│
+├── features/
+│   └── home/               # Seções da landing page
+│       ├── home-hero.tsx
+│       ├── home-about.tsx
+│       ├── home-capacities.tsx
+│       ├── home-proof.tsx
+│       └── home-cta.tsx
+│
+├── config/
+│   └── cn.ts               # Utilitário clsx + tailwind-merge
+│
+└── shared/
+    └── assets/             # Imagens e arquivos estáticos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Variáveis de Ambiente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Crie um arquivo `.env.local` na raiz do projeto com as seguintes variáveis (necessárias para o formulário de contato):
 
-## Learn More
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-To learn more about Next.js, take a look at the following resources:
+Obtenha os valores em [dashboard.emailjs.com](https://dashboard.emailjs.com) → **Account → General**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O template EmailJS deve conter as variáveis:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variável         | Campo do formulário |
+| ---------------- | ------------------- |
+| `{{from_name}}`  | Nome completo       |
+| `{{from_email}}` | E-mail corporativo  |
+| `{{subject}}`    | Assunto             |
+| `{{message}}`    | Mensagem            |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Como Rodar
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Pré-requisitos
+
+- Node.js 20+
+- pnpm (`npm install -g pnpm`)
+
+### Instalação
+
+```bash
+pnpm install
+```
+
+### Desenvolvimento
+
+```bash
+pnpm dev
+```
+
+Acesse [http://localhost:3000](http://localhost:3000).
+
+### Build de produção
+
+```bash
+pnpm build
+pnpm start
+```
+
+### Lint
+
+```bash
+pnpm lint
+```
+
+---
+
+## Fontes
+
+Carregadas via `next/font/google`:
+
+- **Inter** — corpo de texto
+- **Hanken Grotesk** — títulos e headings
+- **JetBrains Mono** — elementos mono/código
+
+---
+
+## Deploy
+
+O projeto é compatível com deploy estático. Recomendado: **[Vercel](https://vercel.com/)** — suporte nativo ao Next.js, CI/CD automático via Git.
+
+Lembre-se de configurar as variáveis de ambiente `NEXT_PUBLIC_EMAILJS_*` no painel do projeto na Vercel.
