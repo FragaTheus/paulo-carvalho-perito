@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hanken_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import AppHeader from "@/components/app/app-header";
+import AppFooter from "@/components/app/app-footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -72,11 +73,12 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
         <AppHeader />
         {children}
+        <AppFooter />
       </body>
     </html>
   );
