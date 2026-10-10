@@ -1,0 +1,54 @@
+<section id="proposta" aria-labelledby="proposta-title">
+  <div uiContainer class="relative">
+    <div
+      class="absolute aspect-3/4 w-full max-w-lg right-1/2 translate-x-1/2 bottom-1/2 translate-y-1/2 overflow-hidden"
+    >
+      <img
+        ngSrc="/hero-img.webp"
+        alt="Retrato de Paulo Carvalho, perito e assistente técnico em perícias trabalhistas"
+        width="1024"
+        height="1365"
+        sizes="(max-width: 512px) 100vw, 50vw"
+        priority
+        class="w-full h-full object-center object-cover"
+      />
+    </div>
+    <div
+      class="absolute aspect-3/4 w-full max-w-lg right-1/2 translate-x-1/2 bottom-1/2 translate-y-1/2 bg-linear-to-t from-background"
+    ></div>
+    <div
+      class="absolute aspect-3/4 w-full max-w-lg right-1/2 translate-x-1/2 bottom-1/2 translate-y-1/2 bg-linear-to-r from-background via-transparent to-background"
+    ></div>
+
+    <div class="relative flex flex-col gap-gutter pt-80 w-full">
+      <header>
+        <app-eyebrow-component label="Engenheiro de Segurança do Trabalho" />
+
+        <h1 id="proposta-title" class="text-5xl font-black tracking-tight max-w-lg mt-2">
+          <strong>Assistente técnico em perícias trabalhistas</strong><br />
+          <span class="text-foreground!"> em São Paulo</span>
+        </h1>
+      </header>
+
+      <p class="max-w-md">
+        Quesitos, diligência e parecer técnico sobre o laudo em perícias de insalubridade,
+        periculosidade e acidente de trabalho.
+      </p>
+
+      <div class="w-full flex items-center gap-2 flex-wrap">
+        <a uiButton variant="link" href="#autoridade">Sobre Paulo</a>
+        <a uiButton variant="link" href="#atuacao">Áreas de atuação</a>
+      </div>
+    </div>
+  </div>
+  <div class="w-full grid grid-cols-1 py-gutter max-w-container mx-auto md:px-gutter">
+    <ul class="w-full h-full flex items-center justify-between overflow-x-auto scrollbar-none">
+      @for (b of bullets; track b.label) {
+        <li class="border-l border-border px-4 text-sm">
+          <p class="font-semibold text-primary">{{ b.label }}</p>
+          <p class="font-medium">{{ b.info }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

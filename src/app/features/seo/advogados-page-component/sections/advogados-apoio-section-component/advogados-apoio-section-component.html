@@ -1,0 +1,23 @@
+<section id="advogados-apoio" aria-labelledby="advogados-apoio-title">
+  <div uiContainer>
+    <header>
+      <app-eyebrow-component label="Como o assistente técnico apoia a sua tese" />
+      <h2 id="advogados-apoio-title" class="text-3xl font-bold mt-4 max-w-xl">
+        Suporte técnico em cada etapa da prova pericial
+      </h2>
+    </header>
+
+    <ul class="grid grid-cols-1 lg:grid-cols-3 mt-gutter">
+      @for (c of cards; track c.title; let i = $index; let last = $last) {
+        <li uiCard [class]="i === 0 || last ? 'lg:col-span-2' : ''">
+          <h3
+            class="text-xl font-semibold mb-4 transition-colors duration-300 group-hover:text-primary"
+          >
+            {{ c.title }}
+          </h3>
+          <p class="text-sm">{{ c.description }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

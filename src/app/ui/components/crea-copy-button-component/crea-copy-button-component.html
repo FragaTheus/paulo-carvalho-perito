@@ -1,0 +1,10 @@
+<button
+  uiButton
+  variant="secondary"
+  type="button"
+  title="Copiar número do CREA-SP"
+  (click)="copyCrea()"
+>
+  CREA-SP 5068973016
+</button>
+<small class="text-xs" aria-live="polite">{{ copyStatus() }}</small>

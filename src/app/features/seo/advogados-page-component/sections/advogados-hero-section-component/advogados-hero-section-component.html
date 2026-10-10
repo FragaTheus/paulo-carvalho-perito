@@ -1,0 +1,35 @@
+<section
+  id="advogados-proposta"
+  aria-labelledby="advogados-proposta-title"
+  class="bg-linear-to-b from-surface to-background"
+>
+  <div uiContainer class="pt-32! flex flex-col gap-gutter">
+    <header>
+      <app-eyebrow-component label="Para advogados trabalhistas" />
+      <h1 id="advogados-proposta-title" class="text-5xl font-black tracking-tight max-w-2xl mt-2">
+        <strong>Assistente técnico para advogados trabalhistas</strong><br />
+        <span class="text-foreground!">em São Paulo</span>
+      </h1>
+    </header>
+
+    <p class="max-w-xl">
+      Quesitos objetivos, leitura crítica do laudo e parecer técnico para fundamentar a sua tese na
+      perícia de insalubridade, periculosidade e acidente de trabalho, com a visão de quem conhece a
+      rotina do perito do juízo.
+    </p>
+
+    <div class="flex flex-wrap items-center gap-2">
+      <app-cta-button-component
+        id="cta-advogados-hero"
+        label="Falar sobre o processo"
+        message="Olá, Paulo. Sou advogado(a) e tenho um processo com perícia trabalhista. Gostaria de falar sobre o caso."
+      />
+      <a uiButton variant="link" routerLink="/advogados" fragment="advogados-prazos"
+        >Prazos da perícia</a
+      >
+      <a uiButton variant="link" routerLink="/advogados" fragment="advogados-faq"
+        >Dúvidas frequentes</a
+      >
+    </div>
+  </div>
+</section>

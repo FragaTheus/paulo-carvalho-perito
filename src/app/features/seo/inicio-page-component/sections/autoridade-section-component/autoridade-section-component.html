@@ -1,0 +1,50 @@
+<section id="autoridade" aria-labelledby="autoridade-title">
+  <div uiContainer>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+      <div class="w-full h-full row-span-2 aspect-3/4 max-w-xs relative justify-self-center">
+        <img
+          ngSrc="/sobre-img.webp"
+          alt="Retrato de Paulo Carvalho, perito e assistente técnico em perícias trabalhistas"
+          width="640"
+          height="853"
+          sizes="(max-width: 768px) 100vw, 40vw"
+          class="w-full h-full object-center object-cover"
+        />
+        <div class="absolute inset-0 bg-linear-to-t from-background via-transparent"></div>
+        <div
+          class="absolute inset-0 bg-linear-to-r from-background via-transparent to-background"
+        ></div>
+      </div>
+      <div class="w-full h-full row-span-2 flex flex-col gap-gutter">
+        <header>
+          <app-eyebrow-component label="Sobre Paulo Carvalho" />
+          <h2 id="autoridade-title" class="text-3xl font-bold mt-4 max-w-md">
+            Paulo Carvalho, perito e assistente técnico
+          </h2>
+        </header>
+
+        <p>
+          Paulo de Carvalho Pereira iniciou a carreira como Técnico de Segurança do Trabalho,
+          formou-se em Engenharia Ambiental e se especializou em Engenharia de Segurança do
+          Trabalho. Atua como perito judicial e assistente técnico em processos trabalhistas em São
+          Paulo e região.
+        </p>
+
+        <app-crea-copy-button-component />
+      </div>
+      <ul class="w-full h-full md:col-span-2 grid grid-cols-1 md:grid-cols-3">
+        @for (c of autoridadeCards; track c.title) {
+          <li uiCard>
+            <p
+              class="text-5xl font-black tracking-tighter transition-colors duration-300 group-hover:text-primary"
+              [class.text-primary]="c.isFirst"
+            >
+              {{ c.title }}
+            </p>
+            <p class="mt-4 text-xs uppercase">{{ c.description }}</p>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+<section [id]="sectionId()" [attr.aria-labelledby]="sectionId() + '-title'">
+  <div uiContainer [class]="layout() === 'side' ? 'grid grid-cols-1 lg:grid-cols-2' : ''">
+    <div>
+      <header>
+        <app-eyebrow-component [label]="eyebrow()" />
+        <h2 [id]="sectionId() + '-title'" class="text-3xl font-bold mt-4 max-w-md">
+          {{ title() }}
+        </h2>
+      </header>
+
+      @if (intro(); as text) {
+        <p class="mt-gutter max-w-xs lg:max-w-md">{{ text }}</p>
+      }
+    </div>
+
+    @if (ordered()) {
+      <ol [class]="listClasses()">
+        <ng-container *ngTemplateOutlet="cards" />
+      </ol>
+    } @else {
+      <ul [class]="listClasses()">
+        <ng-container *ngTemplateOutlet="cards" />
+      </ul>
+    }
+  </div>
+</section>
+
+<ng-template #cards>
+  @for (item of items(); track item.title) {
+    <li uiCard [class]="layout() === 'bento' && wide($index) ? 'lg:col-span-2' : ''">
+      @if (ordered()) {
+        <h3 class="text-sm font-mono transition-colors duration-300 group-hover:text-primary">
+          {{ item.title }}
+        </h3>
+        <p class="mt-4 text-sm">{{ item.description }}</p>
+      } @else {
+        <h3
+          class="text-xl font-semibold mb-4 transition-colors duration-300 group-hover:text-primary"
+        >
+          {{ item.title }}
+        </h3>
+        <p class="text-sm">{{ item.description }}</p>
+      }
+    </li>
+  }
+</ng-template>

@@ -1,0 +1,21 @@
+<section id="pericia" aria-labelledby="pericia-title">
+  <div uiContainer>
+    <header>
+      <app-eyebrow-component label="Como funciona a assistência técnica" />
+      <h2 id="pericia-title" class="text-3xl font-bold mt-4 max-w-md">
+        Da nomeação do perito ao parecer sobre o laudo
+      </h2>
+    </header>
+
+    <ol class="w-full grid grid-cols-1 lg:grid-cols-4 mt-gutter">
+      @for (c of periciaCards; track c.title) {
+        <li uiCard>
+          <h3 class="text-sm font-mono transition-colors duration-300 group-hover:text-primary">
+            {{ c.title }}
+          </h3>
+          <p class="mt-4">{{ c.description }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

@@ -32,6 +32,11 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
+    setHeaders: (res, path) => {
+      if (path.endsWith('robots.txt') || path.endsWith('sitemap.xml')) {
+        res.setHeader('Cache-Control', 'no-cache');
+      }
+    },
   }),
 );
 

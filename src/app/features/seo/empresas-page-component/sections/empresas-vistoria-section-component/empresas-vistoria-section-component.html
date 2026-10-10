@@ -1,0 +1,26 @@
+<section id="empresas-vistoria" aria-labelledby="empresas-vistoria-title">
+  <div uiContainer>
+    <header>
+      <app-eyebrow-component label="Preparação da vistoria" />
+      <h2 id="empresas-vistoria-title" class="text-3xl font-bold mt-4 max-w-xl">
+        O que a empresa precisa organizar antes da perícia
+      </h2>
+    </header>
+
+    <p class="mt-gutter max-w-2xl">
+      A vistoria registra as condições reais do posto de trabalho. Quanto antes a empresa se
+      organiza, mais consistente fica a prova técnica apresentada ao perito do juízo.
+    </p>
+
+    <ol class="grid grid-cols-1 lg:grid-cols-4 mt-gutter">
+      @for (s of steps; track s.title) {
+        <li uiCard>
+          <h3 class="text-sm font-mono transition-colors duration-300 group-hover:text-primary">
+            {{ s.title }}
+          </h3>
+          <p class="mt-4 text-sm">{{ s.description }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

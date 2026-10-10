@@ -1,0 +1,33 @@
+<section [id]="sectionId()" [attr.aria-labelledby]="sectionId() + '-title'">
+  <div
+    uiContainer
+    [class]="
+      layout() === 'side'
+        ? 'grid grid-cols-1 lg:grid-cols-2 gap-gutter'
+        : 'flex flex-col gap-gutter'
+    "
+  >
+    <header>
+      <app-eyebrow-component [label]="eyebrow()" />
+      <h2 [id]="sectionId() + '-title'" class="text-3xl font-bold mt-4 max-w-xl">
+        {{ title() }}
+      </h2>
+    </header>
+    <div class="flex flex-col max-w-3xl w-full">
+      @for (item of items(); track item.question) {
+        <details
+          class="group border-l border-border px-gutter py-4 open:border-primary [&::details-content]:[block-size:0] [&::details-content]:overflow-hidden [&::details-content]:opacity-0 [&::details-content]:[interpolate-size:allow-keywords] [&::details-content]:transition-[block-size,opacity,content-visibility] [&::details-content]:duration-300 [&::details-content]:ease-in-out [&::details-content]:[transition-behavior:allow-discrete] open:[&::details-content]:[block-size:auto] open:[&::details-content]:opacity-100 motion-reduce:[&::details-content]:transition-none"
+        >
+          <summary class="cursor-pointer list-none">
+            <h3
+              class="inline text-base font-semibold normal-case transition-colors duration-300 group-hover:text-primary"
+            >
+              {{ item.question }}
+            </h3>
+          </summary>
+          <p class="mt-3 text-sm">{{ item.answer }}</p>
+        </details>
+      }
+    </div>
+  </div>
+</section>

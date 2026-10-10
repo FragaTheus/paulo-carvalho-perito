@@ -1,0 +1,24 @@
+<section id="empresas-apoio" aria-labelledby="empresas-apoio-title">
+  <div uiContainer class="grid grid-cols-1 lg:grid-cols-2">
+    <div>
+      <header>
+        <app-eyebrow-component label="Como a assistência técnica protege a empresa" />
+        <h2 id="empresas-apoio-title" class="text-3xl font-bold mt-4 max-w-xl">
+          Suporte técnico da notificação ao parecer sobre o laudo
+        </h2>
+      </header>
+    </div>
+    <ul class="mt-gutter lg:mt-0">
+      @for (c of cards; track c.title) {
+        <li uiCard>
+          <h3
+            class="text-xl font-semibold mb-4 transition-colors duration-300 group-hover:text-primary"
+          >
+            {{ c.title }}
+          </h3>
+          <p class="text-sm">{{ c.description }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

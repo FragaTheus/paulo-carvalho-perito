@@ -1,0 +1,43 @@
+<app-page-hero-component
+  sectionId="insalubridade-proposta"
+  [path]="path"
+  eyebrow="Perícia de insalubridade (NR-15)"
+  title="Assistente técnico em perícia de insalubridade"
+  titleSuffix="em São Paulo"
+  description="Avaliação de agentes como ruído, calor e agentes químicos e biológicos, da neutralização por EPIs e do grau do adicional, com quesitos e parecer técnico sobre o laudo do perito do juízo."
+  ctaId="cta-insalubridade-hero"
+  ctaLabel="Falar sobre insalubridade"
+  ctaMessage="Olá, Paulo. Tenho um processo com perícia de insalubridade e gostaria de falar sobre o caso."
+  [links]="heroLinks"
+/>
+<app-card-section-component
+  sectionId="insalubridade-agentes"
+  layout="side"
+  eyebrow="O que a perícia avalia"
+  title="Agentes, exposição e grau do adicional"
+  intro="A insalubridade depende do agente, da intensidade e do tempo de exposição, e da eficácia das medidas de controle. O adicional é de 10%, 20% ou 40%, conforme o grau (CLT, art. 192)."
+  [items]="avaliacaoItems"
+/>
+<app-card-section-component
+  sectionId="insalubridade-etapas"
+  eyebrow="Como a assistência técnica atua"
+  title="Da análise do processo ao parecer sobre o laudo"
+  intro="O assistente técnico entra o quanto antes após a nomeação do perito, para que os quesitos e a vistoria tratem dos agentes realmente discutidos no processo."
+  [items]="etapasItems"
+  [ordered]="true"
+  [columns]="4"
+/>
+<app-faq-component
+  sectionId="insalubridade-faq"
+  layout="side"
+  eyebrow="Perguntas frequentes"
+  title="Dúvidas sobre perícia de insalubridade"
+  [items]="faqItems"
+/>
+<app-contato-section-component
+  title="Tem um processo com perícia de insalubridade?"
+  description="Informe a função, os agentes discutidos e a fase da perícia. Paulo avalia os quesitos, a vistoria e o parecer sobre o laudo."
+  ctaId="cta-insalubridade-contato"
+  ctaLabel="Enviar caso de insalubridade"
+  ctaMessage="Olá, Paulo. Gostaria de enviar um caso de perícia de insalubridade para avaliação de quesitos, vistoria e parecer sobre o laudo."
+/>

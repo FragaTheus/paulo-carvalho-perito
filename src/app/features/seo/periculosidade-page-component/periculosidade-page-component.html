@@ -1,0 +1,42 @@
+<app-page-hero-component
+  sectionId="periculosidade-proposta"
+  [path]="path"
+  eyebrow="Perícia de periculosidade (NR-16)"
+  title="Assistente técnico em perícia de periculosidade"
+  titleSuffix="em São Paulo"
+  description="Análise de atividades com inflamáveis, explosivos, energia elétrica, segurança pessoal ou patrimonial e motocicleta, considerando o risco acentuado e a exposição, com quesitos e parecer sobre o laudo."
+  ctaId="cta-periculosidade-hero"
+  ctaLabel="Falar sobre periculosidade"
+  ctaMessage="Olá, Paulo. Tenho um processo com perícia de periculosidade e gostaria de falar sobre o caso."
+  [links]="heroLinks"
+/>
+<app-card-section-component
+  sectionId="periculosidade-atividades"
+  eyebrow="O que a perícia avalia"
+  title="Atividades de risco e direito ao adicional"
+  intro="A periculosidade decorre do contato com o risco previsto em lei e na NR-16, e gera adicional de 30% sobre o salário, sem acréscimos de gratificações, prêmios ou participação nos lucros (CLT, art. 193)."
+  [items]="avaliacaoItems"
+/>
+<app-card-section-component
+  sectionId="periculosidade-etapas"
+  layout="bento"
+  eyebrow="Como a assistência técnica atua"
+  title="Da análise do processo ao parecer sobre o laudo"
+  intro="O enquadramento depende de detalhes da função e do local de trabalho. O assistente técnico ajuda a levar ao perito do juízo os fatos relevantes para o enquadramento."
+  [items]="etapasItems"
+  [ordered]="true"
+/>
+<app-faq-component
+  sectionId="periculosidade-faq"
+  layout="side"
+  eyebrow="Perguntas frequentes"
+  title="Dúvidas sobre perícia de periculosidade"
+  [items]="faqItems"
+/>
+<app-contato-section-component
+  title="Tem um processo com perícia de periculosidade?"
+  description="Informe a atividade, o local de trabalho e a fase da perícia. Paulo avalia os quesitos, a vistoria e o parecer sobre o laudo."
+  ctaId="cta-periculosidade-contato"
+  ctaLabel="Enviar caso de periculosidade"
+  ctaMessage="Olá, Paulo. Gostaria de enviar um caso de perícia de periculosidade para avaliação de quesitos, vistoria e parecer sobre o laudo."
+/>

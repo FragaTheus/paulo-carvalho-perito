@@ -1,0 +1,42 @@
+<app-page-hero-component
+  sectionId="acidente-proposta"
+  [path]="path"
+  eyebrow="Perícia técnica de acidente de trabalho"
+  title="Assistente técnico em perícia de acidente de trabalho"
+  titleSuffix="em São Paulo"
+  description="Análise das causas do acidente, das condições do ambiente, das máquinas e equipamentos e das medidas de segurança adotadas, com leitura técnica do laudo pericial e parecer sobre as conclusões."
+  ctaId="cta-acidente-de-trabalho-hero"
+  ctaLabel="Falar sobre acidente de trabalho"
+  ctaMessage="Olá, Paulo. Tenho um processo com perícia técnica de acidente de trabalho e gostaria de falar sobre o caso."
+  [links]="heroLinks"
+/>
+<app-card-section-component
+  sectionId="acidente-analise"
+  layout="side"
+  eyebrow="O que a perícia técnica avalia"
+  title="Causas, ambiente e medidas de segurança"
+  intro="A perícia técnica de engenharia avalia como o acidente ocorreu e se as condições de trabalho e as medidas de segurança eram adequadas. É diferente da perícia médica, que avalia lesões e incapacidade."
+  [items]="avaliacaoItems"
+/>
+<app-card-section-component
+  sectionId="acidente-etapas"
+  eyebrow="Como a assistência técnica atua"
+  title="Da análise do processo ao parecer sobre o laudo"
+  intro="Em acidentes, a prova técnica costuma depender de registros e do local, que podem mudar com o tempo. Acionar o assistente técnico cedo ajuda a preservar o que for relevante."
+  [items]="etapasItems"
+  [ordered]="true"
+/>
+<app-faq-component
+  sectionId="acidente-faq"
+  layout="side"
+  eyebrow="Perguntas frequentes"
+  title="Dúvidas sobre perícia de acidente de trabalho"
+  [items]="faqItems"
+/>
+<app-contato-section-component
+  title="Tem um processo com perícia de acidente de trabalho?"
+  description="Informe a data e as circunstâncias do acidente, o tipo de perícia e a fase do processo. Paulo avalia os quesitos, a vistoria e o parecer sobre o laudo."
+  ctaId="cta-acidente-de-trabalho-contato"
+  ctaLabel="Enviar caso de acidente"
+  ctaMessage="Olá, Paulo. Gostaria de enviar um caso de perícia técnica de acidente de trabalho para avaliação de quesitos, vistoria e parecer sobre o laudo."
+/>

@@ -1,0 +1,27 @@
+<section
+  [id]="sectionId()"
+  [attr.aria-labelledby]="sectionId() + '-title'"
+  class="bg-linear-to-b from-surface to-background"
+>
+  <div uiContainer class="pt-32! flex flex-col gap-gutter">
+    <header>
+      <app-eyebrow-component [label]="eyebrow()" />
+      <h1 [id]="sectionId() + '-title'" class="text-5xl font-black tracking-tight max-w-2xl mt-2">
+        <strong>{{ title() }}</strong>
+        @if (titleSuffix(); as suffix) {
+          <br />
+          <span class="text-foreground!">{{ suffix }}</span>
+        }
+      </h1>
+    </header>
+
+    <p class="max-w-xl">{{ description() }}</p>
+
+    <div class="flex flex-wrap items-center gap-2">
+      <app-cta-button-component [id]="ctaId()" [label]="ctaLabel()" [message]="ctaMessage()" />
+      @for (l of links(); track l.fragment) {
+        <a uiButton variant="link" [routerLink]="path()" [fragment]="l.fragment">{{ l.label }}</a>
+      }
+    </div>
+  </div>
+</section>

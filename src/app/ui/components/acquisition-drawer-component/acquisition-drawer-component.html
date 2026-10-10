@@ -1,0 +1,55 @@
+<button uiButton variant="secondary" (click)="openDialog()">
+  <i class="pi pi-bars"></i>
+</button>
+
+<div
+  [class]="
+    visible()
+      ? 'fixed w-screen h-screen z-900 top-0 left-0 bg-background overflow-auto overscroll-contain'
+      : ''
+  "
+  (click)="closeDialog()"
+></div>
+
+<aside
+  class="fixed bg-linear-to-r to-background left-0 top-0 flex h-svh w-screen max-w-sm flex-col overflow-hidden p-gutter z-1000 transition-transform"
+  [class]="visible() ? 'translate-x-0' : '-translate-x-full'"
+>
+  <header id="drawer-header" class="flex shrink-0 items-center justify-between">
+    <app-logo-component href="/" />
+    <button uiButton variant="secondary" (click)="closeDialog()">
+      <i class="pi pi-times"></i>
+    </button>
+  </header>
+
+  <div class="mt-gutter min-h-0 flex-1 overflow-y-auto overscroll-contain">
+    <nav id="drawer-nav" aria-label="Navegação" class="flex flex-col">
+      <p class="mb-2 text-sm font-semibold">Navegação:</p>
+      @for (n of navigationLinks; track n.path) {
+        <a
+          uiButton
+          variant="link"
+          [routerLink]="n.path"
+          routerLinkActive="border-primary"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeDialog()"
+          >{{ n.label }}</a
+        >
+      }
+    </nav>
+
+    <div role="group" aria-label="Útil" class="mt-gutter flex flex-col items-start gap-2">
+      <p class="text-sm font-semibold">Útil:</p>
+      <app-crea-copy-button-component />
+    </div>
+  </div>
+
+  <footer class="mt-gutter shrink-0 border-t border-border pt-gutter">
+    <app-cta-button-component
+      id="cta-drawer-footer"
+      label="Falar sobre o caso"
+      message="Olá, Paulo! Abri o menu do site e gostaria de conversar sobre um caso de assistência técnica em perícia trabalhista."
+      (click)="closeDialog()"
+    />
+  </footer>
+</aside>

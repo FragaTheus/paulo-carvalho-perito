@@ -1,0 +1,11 @@
+<a uiButton variant="primary" [id]="id()" [href]="href()" target="_blank" rel="noopener noreferrer">
+  <i
+    class="pi pi-whatsapp text-[#25D366] transition-colors group-hover:text-primary-foreground"
+    aria-hidden="true"
+  ></i>
+  @if (label()) {
+    {{ label() }}
+  } @else {
+    <ng-content />
+  }
+</a>

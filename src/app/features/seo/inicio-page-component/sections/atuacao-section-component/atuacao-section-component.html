@@ -1,0 +1,27 @@
+<section id="atuacao" aria-labelledby="atuacao-title">
+  <div uiContainer class="grid grid-cols-1 lg:grid-cols-2">
+    <header class="mb-gutter">
+      <app-eyebrow-component label="Áreas de atuação" />
+      <h2 id="atuacao-title" class="text-3xl font-bold max-w-md mt-2">
+        Perícias de insalubridade, periculosidade e acidente de trabalho
+      </h2>
+
+      <p class="mt-gutter max-w-xs">
+        A assistência técnica atua em três frentes de perícia trabalhista, cada uma com normas e
+        critérios próprios.
+      </p>
+    </header>
+
+    <ul class="contents">
+      @for (c of atuacaoCards; track c.href) {
+        <li uiCard class="flex flex-col gap-gutter">
+          <h3 class="font-semibold text-lg transition-colors duration-300 group-hover:text-primary">
+            {{ c.label }}
+          </h3>
+          <p class="text-sm max-w-md">{{ c.description }}</p>
+          <a uiButton variant="link" [routerLink]="c.href" [attr.aria-label]="c.cta">Ver mais</a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

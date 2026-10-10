@@ -1,0 +1,40 @@
+<section id="demanda" aria-labelledby="demanda-title">
+  <div uiContainer class="grid grid-cols-1 lg:grid-cols-2">
+    <div class="flex flex-col gap-gutter">
+      <header>
+        <app-eyebrow-component label="Para advogados e empresas" />
+        <h2 id="demanda-title" class="text-4xl font-bold tracking-tight mt-2">
+          Prazo. Diligência. Laudo.
+        </h2>
+      </header>
+
+      <p class="max-w-2xl mb-gutter">
+        Na perícia trabalhista, prazos, vistoria e laudo exigem assistência técnica em quesitos,
+        diligência e parecer.
+      </p>
+    </div>
+
+    <ul>
+      @for (c of cards; track c.title) {
+        <li uiCard>
+          <h3
+            class="text-xl font-semibold mb-4 transition-colors duration-300 group-hover:text-primary"
+          >
+            {{ c.title }}
+          </h3>
+          <p class="text-sm">{{ c.description }}</p>
+          @if (c.link; as link) {
+            <a
+              uiButton
+              variant="link"
+              class="mt-4"
+              [routerLink]="link.href"
+              [attr.aria-label]="link.label"
+              >Conhecer atendimento</a
+            >
+          }
+        </li>
+      }
+    </ul>
+  </div>
+</section>

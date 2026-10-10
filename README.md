@@ -1,59 +1,123 @@
-# Ui
+# Site comercial editorial — Paulo Carvalho
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.21.
+Site comercial de serviços profissionais com abordagem editorial: apresenta a atuação do Paulo Carvalho como engenheiro de segurança do trabalho, perito judicial e assistente técnico em perícias trabalhistas, enquanto publica conteúdo informativo para apoiar a descoberta orgânica e a tomada de decisão de advogados e empresas.
 
-## Development server
+O produto combina páginas de serviço, conteúdo técnico e jurídico revisável, navegação orientada por público e chamadas de contato. Não é um CMS nem um blog: o conteúdo e as páginas são mantidos no código, com documentação editorial para revisão e atualização.
 
-To start a local development server, run:
+## Visão técnica
 
-```bash
-ng serve
+- **Angular 21** com TypeScript e componentes standalone.
+- **Angular Router** com carregamento lazy das páginas.
+- **SSR e prerender** pelo Angular SSR, entregando HTML inicial indexável para as seis rotas públicas.
+- **Tailwind CSS 4** para estilos utilitários e tokens de design definidos em CSS.
+- **SEO técnico** com metadados por rota, canonical, Open Graph, Twitter Cards, JSON-LD, robots.txt e sitemap.
+- **Acessibilidade** com HTML semântico, nomes acessíveis para navegação e imagens com texto alternativo.
+- **Conteúdo editorial** separado em documentos Markdown para orientar revisão de textos e afirmações profissionais.
+
+## Estrutura do projeto
+
+```text
+src/
+  app/
+    core/
+      seo/                 # Serviço de title, description, canonical e metadados
+    features/
+      seo/
+        inicio-page-component/
+          sections/        # Seções reutilizáveis da página inicial
+        advogados-page-component/
+        empresas-page-component/
+        insalubridade-page-component/
+        periculosidade-page-component/
+        acidente-de-trabalho-page-component/
+        layout-component/  # Elementos globais e outlet das rotas
+    ui/
+      components/          # Header, footer, FAQ, hero, CTA, cards etc.
+      directives/          # Diretivas de layout e apresentação
+  index.html               # Metadados e JSON-LD base
+  server.ts                # Servidor Node/Express para Angular SSR
+public/
+  favicon.svg
+  hero-img.webp
+  sobre-img.webp
+  robots.txt
+  sitemap.xml
+docs/
+  editorial/               # Conteúdo revisável por seção e chave editorial
+  seo/                     # Auditoria, estratégia e documentação de conteúdo SEO
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Rotas públicas
 
-## Code scaffolding
+| Rota | Objetivo |
+| --- | --- |
+| `/` | Apresentação dos serviços, autoridade profissional, FAQ e contato |
+| `/advogados` | Assistência técnica para advogados trabalhistas |
+| `/empresas` | Preparação e acompanhamento de perícias para empresas |
+| `/insalubridade` | Serviço de perícia de insalubridade |
+| `/periculosidade` | Serviço de perícia de periculosidade |
+| `/acidente-de-trabalho` | Perícia técnica de acidente de trabalho |
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+As rotas são declaradas em `src/app/app.routes.ts`. Os metadados específicos de cada página são configurados junto aos respectivos componentes de página por meio do serviço SEO.
 
-```bash
-ng generate component component-name
-```
+## Requisitos
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Node.js compatível com Angular 21
+- npm 11
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Desenvolvimento local
 
 ```bash
-ng test
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+Abra `http://localhost:4200/`. O servidor de desenvolvimento recarrega a aplicação após alterações.
 
-For end-to-end (e2e) testing, run:
+## Build, prerender e execução SSR
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+O build de produção fica em `dist/ui/`; as seis rotas são prerenderizadas como parte do build.
 
-## Additional Resources
+Para iniciar o servidor Node/SSR após compilar:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run serve:ssr:ui
+```
+
+O servidor escuta na porta `4000` por padrão. Configure a variável `PORT` para usar outra porta. Em produção, o proxy ou a plataforma de hospedagem deve encaminhar as requisições para o servidor, permitir acesso direto às rotas e configurar compressão Brotli ou gzip.
+
+## Scripts disponíveis
+
+| Comando | Descrição |
+| --- | --- |
+| `npm start` | Servidor de desenvolvimento Angular |
+| `npm run build` | Build otimizado e prerender das páginas |
+| `npm run watch` | Build contínuo de desenvolvimento |
+| `npm run serve:ssr:ui` | Executa o servidor Node do build |
+| `npm test` | Executa os testes configurados pelo Angular CLI |
+
+## SEO e operação de conteúdo
+
+- Titles, descriptions e URLs canônicas são configurados por página.
+- O documento base contém metadados sociais e JSON-LD para site, profissional e serviço; metadados de rota são atualizados no prerender.
+- `public/robots.txt` e `public/sitemap.xml` são copiados para o build. Atualize o sitemap quando as rotas indexáveis mudarem.
+- Após o deploy, confira respostas HTTP, HTML prerenderizado e URLs canônicas; envie o sitemap no Google Search Console.
+- Imagens de página estão em WebP. O hero usa `NgOptimizedImage` com prioridade; imagens fora da primeira dobra carregam sob demanda.
+- Mantenha informações profissionais, contato, área atendida e afirmações técnicas/jurídicas revisadas antes da publicação.
+
+### Documentos editoriais e SEO
+
+- [Conteúdo editorial do site](./docs/editorial/conteudo-editorial.md)
+- [Auditoria SEO e pendências](./docs/seo/01-auditoria-seo.md)
+- [Proposta de conteúdo SEO](./docs/seo/02-conteudo-novo.md)
+- [Justificativas e plano de implementação](./docs/seo/03-justificativas-e-prompt.md)
+
+## Testes
+
+```bash
+npm test
+```

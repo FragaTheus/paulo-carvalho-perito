@@ -1,0 +1,27 @@
+<section
+  id="contato"
+  aria-labelledby="contato-title"
+  class="bg-linear-to-b from-background to-surface"
+>
+  <div uiContainer class="flex flex-col gap-gutter items-center justify-center text-center">
+    <app-eyebrow-component label="Contato" />
+    <h2 id="contato-title" class="uppercase text-5xl font-black tracking-tight max-w-4xl">
+      {{ title() }}
+    </h2>
+
+    <p class="max-w-md">
+      {{ description() }}
+    </p>
+
+    <div class="flex flex-col gap-2">
+      @for (c of contacts; track c.href) {
+        <a href="{{ c.href }}" target="_blank" rel="noopener noreferrer" title="{{ c.title }}">
+          <i class="text-primary mr-2 {{ c.icon }}"></i>
+          {{ c.label }}
+        </a>
+      }
+    </div>
+
+    <app-cta-button-component [id]="ctaId()" [label]="ctaLabel()" [message]="ctaMessage()" />
+  </div>
+</section>

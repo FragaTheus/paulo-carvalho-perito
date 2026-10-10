@@ -1,0 +1,59 @@
+<footer class="bg-surface">
+  <div
+    class="max-w-container mx-auto grid grid-cols-1 gap-gutter p-gutter md:grid-cols-2 lg:grid-cols-4"
+  >
+    <div class="flex flex-col gap-4">
+      <app-logo-component />
+      <p class="max-w-xs text-sm">
+        Assistência técnica em perícias trabalhistas em São Paulo e Grande SP.
+      </p>
+      <p class="max-w-xs text-xs">Engenheiro de Segurança do Trabalho · CREA-SP nº 5068973016</p>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <h2 class="text-sm font-semibold">Contato e redes sociais</h2>
+      @for (link of contacts; track link.href) {
+        <a
+          [href]="link.href"
+          class="inline-flex items-center gap-3 text-sm transition-colors hover:text-primary"
+          [attr.target]="link.external ? '_blank' : null"
+          [attr.rel]="link.external ? 'noopener noreferrer' : null"
+        >
+          <i [class]="link.icon" aria-hidden="true"></i>
+          <span>{{ link.label }}</span>
+        </a>
+      }
+      @for (link of socialLinks; track link.href) {
+        <a
+          [href]="link.href"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 text-sm transition-colors hover:text-primary"
+        >
+          <i [class]="link.icon" aria-hidden="true"></i>
+          <span>{{ link.label }}</span>
+        </a>
+      }
+    </div>
+
+    <nav aria-label="Navegação do rodapé" class="flex flex-col items-start gap-3">
+      <h2 class="text-sm font-semibold">Navegação</h2>
+      @for (link of navigationLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          class="text-sm transition-colors hover:text-primary"
+          >{{ link.label }}</a
+        >
+      }
+    </nav>
+
+    <div class="flex flex-col gap-3 text-sm">
+      <p>© 2025 Paulo Carvalho. Todos os direitos reservados.</p>
+      <p class="text-xs">
+        As informações deste site têm caráter informativo e não substituem a análise técnica do caso
+        concreto.
+      </p>
+      <p class="text-xs">Desenvolvido por <span class="font-mono">Optional&lt;&gt;</span></p>
+    </div>
+  </div>
+</footer>

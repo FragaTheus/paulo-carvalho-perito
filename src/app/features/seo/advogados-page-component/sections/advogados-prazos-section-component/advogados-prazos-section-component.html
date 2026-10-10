@@ -1,0 +1,26 @@
+<section id="advogados-prazos" aria-labelledby="advogados-prazos-title">
+  <div uiContainer>
+    <header>
+      <app-eyebrow-component label="Prazos da perícia" />
+      <h2 id="advogados-prazos-title" class="text-3xl font-bold mt-4 max-w-xl">
+        Quando acionar o assistente técnico
+      </h2>
+    </header>
+
+    <p class="mt-gutter max-w-2xl">
+      Em regra, o quanto antes após a nomeação do perito. Confira sempre o prazo na intimação do seu
+      processo: quanto mais cedo o assistente técnico entra, melhores os quesitos e a preparação da
+      vistoria.
+    </p>
+    <ol class="grid grid-cols-1 lg:grid-cols-4 mt-gutter">
+      @for (s of steps; track s.title) {
+        <li uiCard>
+          <h3 class="text-sm font-mono transition-colors duration-300 group-hover:text-primary">
+            {{ s.title }}
+          </h3>
+          <p class="mt-4 text-sm">{{ s.description }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

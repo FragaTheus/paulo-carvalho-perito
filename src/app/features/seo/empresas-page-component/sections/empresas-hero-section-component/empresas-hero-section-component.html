@@ -1,0 +1,35 @@
+<section
+  id="empresas-proposta"
+  aria-labelledby="empresas-proposta-title"
+  class="bg-linear-to-b from-surface to-background"
+>
+  <div uiContainer class="pt-32! flex flex-col gap-gutter">
+    <header>
+      <app-eyebrow-component label="Para empresas e jurídico interno" />
+      <h1 id="empresas-proposta-title" class="text-5xl font-black tracking-tight max-w-2xl mt-2">
+        <strong>Assistente técnico em perícia trabalhista para empresas</strong><br />
+        <span class="text-foreground!">em São Paulo</span>
+      </h1>
+    </header>
+
+    <p class="max-w-xl">
+      Preparação para a vistoria, organização da documentação técnica e acompanhamento da perícia de
+      insalubridade, periculosidade e acidente de trabalho, para que o laudo reflita as condições
+      reais de trabalho da empresa.
+    </p>
+
+    <div class="flex flex-wrap items-center gap-2">
+      <app-cta-button-component
+        id="cta-empresas-hero"
+        label="Falar sobre a perícia"
+        message="Olá, Paulo. Represento uma empresa que recebeu a notificação de uma perícia trabalhista e gostaria de falar sobre o caso."
+      />
+      <a uiButton variant="link" routerLink="/empresas" fragment="empresas-vistoria"
+        >Preparação da vistoria</a
+      >
+      <a uiButton variant="link" routerLink="/empresas" fragment="empresas-faq"
+        >Dúvidas frequentes</a
+      >
+    </div>
+  </div>
+</section>
