@@ -22,6 +22,17 @@ app.get('/.well-known/ard.json', (_req, res, next) => {
   );
 });
 
+app.get('/.well-known/ai-catalog.json', (_req, res, next) => {
+  res.setHeader('Content-Type', 'application/ai-catalog+json; charset=utf-8');
+  res.sendFile(
+    join(browserDistFolder, '.well-known/ai-catalog.json'),
+    { dotfiles: 'allow' },
+    (error) => {
+      if (error) next(error);
+    },
+  );
+});
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.

@@ -40,6 +40,7 @@ public/
   favicon.svg
   fonts/                  # Fontes WOFF2 locais e licenças SIL OFL
   .well-known/ard.json
+  .well-known/ai-catalog.json
   hero-img*.webp
   sobre-img*.webp
   llms.txt
@@ -108,10 +109,10 @@ O servidor escuta na porta `4000` por padrão. Configure a variável `PORT` para
 - Titles, descriptions e URLs canônicas são configurados por página.
 - O documento base contém metadados sociais e JSON-LD para site, profissional e serviço; metadados de rota são atualizados no prerender.
 - `public/robots.txt` e `public/sitemap.xml` são copiados para o build. Atualize o sitemap quando as rotas indexáveis mudarem.
-- `public/llms.txt` resume o site para agentes de IA; `public/.well-known/ard.json` publica um manifesto ARD válido e vazio porque o site não expõe ferramentas ou agentes autônomos.
+- `public/llms.txt` resume o site para agentes de IA; `public/.well-known/ard.json` publica um manifesto ARD válido e vazio, e `public/.well-known/ai-catalog.json` mantém compatibilidade com consumidores do formato anterior. O site não expõe ferramentas ou agentes autônomos.
 - As fontes variáveis são servidas de `public/fonts/` e pré-carregadas para evitar dependência externa e deslocamentos durante a troca de fontes.
 - Após o deploy, confira respostas HTTP, HTML prerenderizado e URLs canônicas; envie o sitemap no Google Search Console.
-- Imagens de página estão em WebP responsivo. O hero usa `NgOptimizedImage` com prioridade e variantes `srcset`; imagens fora da primeira dobra carregam sob demanda.
+- Imagens de página estão em WebP. O hero usa `NgOptimizedImage` com prioridade e a imagem de 1024 px para preservar a nitidez; imagens fora da primeira dobra carregam sob demanda.
 - O menu móvel informa nomes e estados acessíveis, oculta o drawer fechado da árvore de acessibilidade, mantém o foco dentro dele e permite fechá-lo com Escape.
 - Mantenha informações profissionais, contato, área atendida e afirmações técnicas/jurídicas revisadas antes da publicação.
 
