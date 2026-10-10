@@ -49,14 +49,14 @@ docs/
 
 ## Rotas públicas
 
-| Rota | Objetivo |
-| --- | --- |
-| `/` | Apresentação dos serviços, autoridade profissional, FAQ e contato |
-| `/advogados` | Assistência técnica para advogados trabalhistas |
-| `/empresas` | Preparação e acompanhamento de perícias para empresas |
-| `/insalubridade` | Serviço de perícia de insalubridade |
-| `/periculosidade` | Serviço de perícia de periculosidade |
-| `/acidente-de-trabalho` | Perícia técnica de acidente de trabalho |
+| Rota                    | Objetivo                                                          |
+| ----------------------- | ----------------------------------------------------------------- |
+| `/`                     | Apresentação dos serviços, autoridade profissional, FAQ e contato |
+| `/advogados`            | Assistência técnica para advogados trabalhistas                   |
+| `/empresas`             | Preparação e acompanhamento de perícias para empresas             |
+| `/insalubridade`        | Serviço de perícia de insalubridade                               |
+| `/periculosidade`       | Serviço de perícia de periculosidade                              |
+| `/acidente-de-trabalho` | Perícia técnica de acidente de trabalho                           |
 
 As rotas são declaradas em `src/app/app.routes.ts`. Os metadados específicos de cada página são configurados junto aos respectivos componentes de página por meio do serviço SEO.
 
@@ -92,13 +92,13 @@ O servidor escuta na porta `4000` por padrão. Configure a variável `PORT` para
 
 ## Scripts disponíveis
 
-| Comando | Descrição |
-| --- | --- |
-| `npm start` | Servidor de desenvolvimento Angular |
-| `npm run build` | Build otimizado e prerender das páginas |
-| `npm run watch` | Build contínuo de desenvolvimento |
-| `npm run serve:ssr:ui` | Executa o servidor Node do build |
-| `npm test` | Executa os testes configurados pelo Angular CLI |
+| Comando                | Descrição                                       |
+| ---------------------- | ----------------------------------------------- |
+| `npm start`            | Servidor de desenvolvimento Angular             |
+| `npm run build`        | Build otimizado e prerender das páginas         |
+| `npm run watch`        | Build contínuo de desenvolvimento               |
+| `npm run serve:ssr:ui` | Executa o servidor Node do build                |
+| `npm test`             | Executa os testes configurados pelo Angular CLI |
 
 ## SEO e operação de conteúdo
 
@@ -108,13 +108,6 @@ O servidor escuta na porta `4000` por padrão. Configure a variável `PORT` para
 - Após o deploy, confira respostas HTTP, HTML prerenderizado e URLs canônicas; envie o sitemap no Google Search Console.
 - Imagens de página estão em WebP. O hero usa `NgOptimizedImage` com prioridade; imagens fora da primeira dobra carregam sob demanda.
 - Mantenha informações profissionais, contato, área atendida e afirmações técnicas/jurídicas revisadas antes da publicação.
-
-### Documentos editoriais e SEO
-
-- [Conteúdo editorial do site](./docs/editorial/conteudo-editorial.md)
-- [Auditoria SEO e pendências](./docs/seo/01-auditoria-seo.md)
-- [Proposta de conteúdo SEO](./docs/seo/02-conteudo-novo.md)
-- [Justificativas e plano de implementação](./docs/seo/03-justificativas-e-prompt.md)
 
 ## Testes
 
