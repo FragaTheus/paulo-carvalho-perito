@@ -16,7 +16,7 @@
     <div class="flex flex-col max-w-3xl w-full">
       @for (item of items(); track item.question) {
         <details
-          class="group border-l border-border px-gutter py-4 open:border-primary [&::details-content]:[block-size:0] [&::details-content]:overflow-hidden [&::details-content]:opacity-0 [&::details-content]:[interpolate-size:allow-keywords] [&::details-content]:transition-[block-size,opacity,content-visibility] [&::details-content]:duration-300 [&::details-content]:ease-in-out [&::details-content]:[transition-behavior:allow-discrete] open:[&::details-content]:[block-size:auto] open:[&::details-content]:opacity-100 motion-reduce:[&::details-content]:transition-none"
+          class="group border-l border-border px-gutter py-4 open:border-primary [&::details-content]:opacity-0 [&::details-content]:transition-opacity [&::details-content]:duration-300 [&::details-content]:ease-in-out open:[&::details-content]:opacity-100 motion-reduce:[&::details-content]:transition-none"
         >
           <summary class="cursor-pointer list-none">
             <h3
