@@ -1,6 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap');
-@import 'primeicons/primeicons.css';
 @import 'tailwindcss';
+
+@font-face {
+  font-family: 'primeicons';
+  src: url('../node_modules/primeicons/fonts/primeicons.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.pi {
+  font-family: 'primeicons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pi::before {
+  backface-visibility: hidden;
+}
+
+.pi-bars::before {
+  content: '\e929';
+}
+
+.pi-envelope::before {
+  content: '\e977';
+}
+
+.pi-instagram::before {
+  content: '\e9be';
+}
+
+.pi-linkedin::before {
+  content: '\e9c4';
+}
+
+.pi-times::before {
+  content: '\ea46';
+}
+
+.pi-whatsapp::before {
+  content: '\ea60';
+}
 
 :root {
   --background: #131313;
