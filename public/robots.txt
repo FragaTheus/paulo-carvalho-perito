@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.paulocarvalhoperitojudicial.com/sitemap.xml
+Sitemap: https://www.pcpaulocarvalho.com.br/sitemap.xml

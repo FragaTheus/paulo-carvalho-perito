@@ -30,8 +30,8 @@
             "outputMode": "server",
             "security": {
               "allowedHosts": [
-                "www.paulocarvalhoperitojudicial.com",
-                "paulocarvalhoperitojudicial.com",
+                "www.pcpaulocarvalho.com.br",
+                "pcpaulocarvalho.com.br",
                 "localhost"
               ]
             },

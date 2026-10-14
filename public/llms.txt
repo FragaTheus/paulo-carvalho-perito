@@ -6,12 +6,12 @@ Este site apresenta serviços de assistência técnica para advogados e empresas
 
 ## Páginas principais
 
-- [Início](https://www.paulocarvalhoperitojudicial.com/): apresentação profissional, serviços, processo de trabalho e contato.
-- [Para advogados](https://www.paulocarvalhoperitojudicial.com/advogados): assistência técnica para processos trabalhistas.
-- [Para empresas](https://www.paulocarvalhoperitojudicial.com/empresas): preparação e acompanhamento de perícias para empresas.
-- [Perícia de insalubridade](https://www.paulocarvalhoperitojudicial.com/insalubridade): avaliação técnica relacionada à NR-15.
-- [Perícia de periculosidade](https://www.paulocarvalhoperitojudicial.com/periculosidade): avaliação técnica relacionada à NR-16.
-- [Acidente de trabalho](https://www.paulocarvalhoperitojudicial.com/acidente-de-trabalho): análise técnica de causas, ambiente e medidas de segurança.
+- [Início](https://www.pcpaulocarvalho.com.br/): apresentação profissional, serviços, processo de trabalho e contato.
+- [Para advogados](https://www.pcpaulocarvalho.com.br/advogados): assistência técnica para processos trabalhistas.
+- [Para empresas](https://www.pcpaulocarvalho.com.br/empresas): preparação e acompanhamento de perícias para empresas.
+- [Perícia de insalubridade](https://www.pcpaulocarvalho.com.br/insalubridade): avaliação técnica relacionada à NR-15.
+- [Perícia de periculosidade](https://www.pcpaulocarvalho.com.br/periculosidade): avaliação técnica relacionada à NR-16.
+- [Acidente de trabalho](https://www.pcpaulocarvalho.com.br/acidente-de-trabalho): análise técnica de causas, ambiente e medidas de segurança.
 
 ## Contato
 

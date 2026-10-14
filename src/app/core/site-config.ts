@@ -1,3 +1,3 @@
 export const SITE = {
-  domain: 'https://www.paulocarvalhoperitojudicial.com',
+  domain: 'https://www.pcpaulocarvalho.com.br',
 } as const;
